@@ -7,8 +7,8 @@ if [ -f $SELF ]; then
 	mv tpl.gitignore .gitignore
 	mv tpl.README.md README.md
 	rm LICENSE
-	mkdir var/media
-	mkdir var/static
+	mkdir -p var/media
+	mkdir -p var/static
 	pip install -r requirements/dev.txt
 	rm bin/setup.sh
 else
