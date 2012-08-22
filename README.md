@@ -1,14 +1,18 @@
 # Django 1.4 Project Template #
 
-Django project boilerplate with Twitter bootstrap.
+Django project template with Twitter bootstrap included.
 
 ## Installation ##
 
-- Create your virtualenv
+- сreate your virtualenv
 - pip install django
-- Assume PROJECT_NAME is your project name
+
+Assume PROJECT_NAME as your real project name  
+
 - $ django-admin.py startproject --template=/home/veter/Projects/sandbox/django_project_template --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
-- Now you have PROJECT_NAME project dir
+
+Now you have PROJECT_NAME dir
+
 - $ mv PROJECT_NAME/src/project PROJECT_NAME/src/PROJECT_NAME
 - $ mv PROJECT_NAME/src/PROJECT_NAME/project_app PROJECT_NAME/src/PROJECT_NAME/PROJECT_NAME
 - $ cd PROJECT_NAME
