@@ -18,8 +18,5 @@ DATABASES = {
         #},
         #'TEST_CHARSET': 'utf8',
         #'TEST_COLLATION': 'utf8_general_ci',
-    },
-    # 'slave': {
-    #     ...
-    # },
+    }
 }

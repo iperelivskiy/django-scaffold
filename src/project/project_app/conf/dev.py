@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
+
 from .base import *
 
 
@@ -22,10 +23,7 @@ DATABASES = {
         #},
         #'TEST_CHARSET': 'utf8',
         #'TEST_COLLATION': 'utf8_general_ci',
-    },
-    # 'slave': {
-    #     ...
-    # },
+    }
 }
 
 # Uncomment this and set to all slave DBs in use on the site.
