@@ -5,9 +5,6 @@ import logging
 from .base import *
 
 
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -53,8 +50,9 @@ SECRET_KEY = '{{ secret_key }}'
 ROOT_URLCONF = '{{ project_name }}.urls_dev'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'var','media')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'var', 'static')
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'var', 'static')
 STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'

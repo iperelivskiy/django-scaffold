@@ -3,7 +3,6 @@
 import os
 #import memcache_toolbar.panels.memcache
 
-# Your project root
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')
 
 #SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
@@ -19,6 +18,7 @@ SITE_ID = 1
 # Defines the views served for root URLs.
 ROOT_URLCONF = '{{ project_name }}.urls'
 
+
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.sessions',
@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     #'django.contrib.syndication',
 
     'django_extensions',
+    'django_assets',
     'south',
     'session_csrf',
     #'sorl.thumbnail',
@@ -56,23 +57,18 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
-# Sessions
-#
+
+## SESSIONS
+
 # By default, be at least somewhat secure with our session cookies.
 SESSION_COOKIE_HTTPONLY = True
 
 # Set this to true if you are using https
 SESSION_COOKIE_SECURE = False
 
-## Tests
-TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
 
-# Additional locations of static files
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+## TESTS
+TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -85,12 +81,21 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django_assets.finders.AssetsFinder',
 )
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
@@ -104,13 +109,13 @@ MIDDLEWARE_CLASSES = [
 
 TEMPLATE_CONTEXT_PROCESSORS = [
     'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.debug',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
     'session_csrf.context_processor',
-    'django.contrib.messages.context_processors.messages',
 ]
 
 TEMPLATE_DIRS = (

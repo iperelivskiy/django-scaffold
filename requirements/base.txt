@@ -7,8 +7,10 @@ py-bcrypt
 
 django>=1.4
 django-extensions
+django-assets
 South
 Pillow
+webassets
 
 #sorl-thumbnail
 #django-braces
