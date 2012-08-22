@@ -1,0 +1,8 @@
+*.pyc
+*.log
+*.pot
+.DS_Store
+.idea
+.sublime*
+/var
+/src/{{ project_name }}/{{ project_name }}/conf/local.py

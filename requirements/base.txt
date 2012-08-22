@@ -1,0 +1,67 @@
+
+py-bcrypt
+
+#gunicorn==0.14.2
+#psycopg2==2.4.5
+#MySQL-python
+
+django>=1.4
+django-extensions
+South
+Pillow
+
+#django-braces
+#django-crispy-forms
+#django-registration
+#django-social-auth
+#django-profiletools
+#django-registration
+
+
+## Security
+
+django-session-csrf
+#bleach
+#cef
+#django-secure
+
+## Debug
+
+django-debug-toolbar
+# There are useful panels for debug-toolbar, but have not quite been updated yet for 1.4
+#-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
+#-e git://github.com/ross/memcache-debug-panel#egg=memcache_toolbar-dev
+
+
+## Templates
+
+#Jinja2
+#jingo
+#jingo-minify
+#Markdown
+
+
+## Logging
+
+#raven
+
+
+## Message queue
+
+#celery
+#django-celery
+
+
+## L10n/i18n
+
+#Babel
+#-e git://github.com/clouserw/tower.git#egg=tower
+
+## Caching
+
+#python-memcached
+
+
+## Various tidbits
+#commonware
+#-e git://github.com/mozilla/nuggets.git#egg=nuggets

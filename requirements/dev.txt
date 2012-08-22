@@ -1,0 +1,16 @@
+-r base.txt
+
+# Deployment
+Fabric
+
+# Documentation
+Sphinx
+
+# Testing
+nose
+mock
+django-nose
+-e git://github.com/jbalogh/test-utils.git#egg=test-utils
+coverage
+pep8
+pylint
