@@ -5,11 +5,11 @@ Django project template with Twitter bootstrap included.
 ## Installation ##
 
 - сreate your virtualenv
-- pip install django
+- $ pip install django
 
-Assume PROJECT_NAME as your real project name  
+Consider PROJECT_NAME as your real project name  
 
-- $ django-admin.py startproject --template=/home/veter/Projects/sandbox/django_project_template --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
+- $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
 
 Now you have PROJECT_NAME dir
 
