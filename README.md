@@ -11,8 +11,9 @@ Consider PROJECT_NAME as your real project name
 - $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
 - $ cd PROJECT_NAME
 - $ source bin/setup.sh
-- edit src/PROJECT_NAME/PROJECT_NAME/conf/dev.py if needed
 - $ python src/PROJECT_NAME/manage.py runserver
+
+Project settings live in src/PROJECT_NAME/PROJECT_NAME/conf dir. Dev settings are used by default.
 
 ## License ##
 
