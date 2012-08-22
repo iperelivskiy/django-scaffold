@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Requires inotify-tools.
+# You can install it by typing: sudo apt-get install inotify-tools
+
 echo "Listening for less files...";
 
 while true;
