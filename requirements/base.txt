@@ -10,6 +10,7 @@ django-extensions
 South
 Pillow
 
+#sorl-thumbnail
 #django-braces
 #django-crispy-forms
 #django-registration
@@ -57,11 +58,13 @@ django-debug-toolbar
 #Babel
 #-e git://github.com/clouserw/tower.git#egg=tower
 
+
 ## Caching
 
 #python-memcached
 
 
 ## Various tidbits
+
 #commonware
 #-e git://github.com/mozilla/nuggets.git#egg=nuggets

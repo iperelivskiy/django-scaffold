@@ -21,10 +21,10 @@ ROOT_URLCONF = '{{ project_name }}.urls'
 
 INSTALLED_APPS = [
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'django.contrib.contenttypes',
     #'django.contrib.admin',
     #'django.contrib.sites',
     #'django.contrib.admindocs',
@@ -32,13 +32,14 @@ INSTALLED_APPS = [
     #'django.contrib.humanize',
     #'django.contrib.syndication',
 
+    'django_extensions',
     'south',
+    'session_csrf',
     #'sorl.thumbnail',
     #'crispy_forms',
     #'commonware.response.cookies',
     #'djcelery',
     #'django_nose',
-    #'session_csrf',
     #'memcache_toolbar',
 
     '{{ project_name }}',

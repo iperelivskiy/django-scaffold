@@ -71,8 +71,6 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 # BROKER_VHOST = 'django'
 # CELERY_RESULT_BACKEND = 'amqp'
 
-
-
 # Common Event Format logging parameters
 #CEF_PRODUCT = '{{ project_name }}'
 #CEF_VENDOR = 'Your Company'
