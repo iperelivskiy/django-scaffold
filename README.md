@@ -2,7 +2,7 @@
 
 Django project template with Twitter bootstrap included.
 
-## Installation ##
+## Setup ##
 
 Consider PROJECT_NAME as your real project name
 
@@ -12,7 +12,7 @@ Consider PROJECT_NAME as your real project name
 - $ mv PROJECT_NAME/src/project PROJECT_NAME/src/PROJECT_NAME
 - $ mv PROJECT_NAME/src/PROJECT_NAME/project_app PROJECT_NAME/src/PROJECT_NAME/PROJECT_NAME
 - $ cd PROJECT_NAME
-- $ source bin/install.sh
+- $ source bin/setup.sh
 - edit src/PROJECT_NAME/PROJECT_NAME/conf/dev.py if needed
 - $ python src/PROJECT_NAME/manage.py runserver
 
