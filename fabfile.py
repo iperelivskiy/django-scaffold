@@ -4,11 +4,17 @@ import string
 from fabric.api import cd, run, env, local, sudo, require
 from fabric.operations import _prefix_commands, _prefix_env_vars
 
-env.hosts = ['{{ project_name }}.example.com']
+
+env.user = '{{ project_name }}'
+env.hosts = ['{{ project_name }}.com']
 env.code_dir = '/srv/www/{{ project_name }}'
-env.virtualenv = '/srv/www/{{ project_name }}/.virtualenv'
+env.virtualenv = '/home/%s/.virtualenvs/{{ project_name }}' % env.user
 env.code_repo = 'git@github.com:user/{{project_name}}.git'
 env.django_settings_module = '{{ project_name }}.settings'
+
+
+def runserver():
+    local("python src/{{ project_name }}/manage.py runserver")
 
 
 def run_tests():
