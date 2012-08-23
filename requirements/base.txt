@@ -23,7 +23,6 @@ webassets
 
 ## Security
 
-django-session-csrf
 #bleach
 #cef
 #django-secure

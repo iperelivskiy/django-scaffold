@@ -15,9 +15,6 @@ LANGUAGES = (
 
 SITE_ID = 1
 
-# Defines the views served for root URLs.
-ROOT_URLCONF = '{{ project_name }}.urls'
-
 
 INSTALLED_APPS = [
     'django.contrib.auth',
@@ -35,7 +32,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_assets',
     'south',
-    'session_csrf',
     #'sorl.thumbnail',
     #'crispy_forms',
     #'commonware.response.cookies',
@@ -45,6 +41,10 @@ INSTALLED_APPS = [
 
     '{{ project_name }}',
 ]
+
+
+# Defines the views served for root URLs.
+ROOT_URLCONF = '{{ project_name }}.urls'
 
 # Place bcrypt first in the list, so it will be the default password hashing
 # mechanism
@@ -100,12 +100,13 @@ STATICFILES_FINDERS = (
 MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'session_csrf.CsrfMiddleware',  # Must be after auth middleware.
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'commonware.middleware.FrameOptionsHeader',
 ]
+
 
 TEMPLATE_CONTEXT_PROCESSORS = [
     'django.contrib.auth.context_processors.auth',
@@ -115,8 +116,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
-    'session_csrf.context_processor',
 ]
+
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -124,11 +125,13 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
+
 
 FIXTURE_DIRS = (
     os.path.join(PROJECT_ROOT, 'fixtures'),
