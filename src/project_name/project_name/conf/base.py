@@ -5,8 +5,6 @@ import os
 
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')
 
-#SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
-
 LANGUAGE_CODE = 'ru'
 
 LANGUAGES = (
@@ -34,7 +32,6 @@ INSTALLED_APPS = [
     'south',
     #'sorl.thumbnail',
     #'crispy_forms',
-    #'commonware.response.cookies',
     #'djcelery',
     #'django_nose',
     #'memcache_toolbar',
@@ -104,7 +101,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     #'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'commonware.middleware.FrameOptionsHeader',
 ]
 
 
