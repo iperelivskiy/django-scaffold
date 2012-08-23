@@ -8,7 +8,7 @@ Consider PROJECT_NAME as your real project name
 
 - сreate your virtualenv
 - $ pip install django
-- $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
+- $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
 - $ cd PROJECT_NAME
 - $ source bin/setup.sh
 - $ python src/PROJECT_NAME/manage.py runserver

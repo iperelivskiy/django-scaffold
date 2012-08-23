@@ -65,7 +65,7 @@ SESSION_COOKIE_SECURE = False
 
 
 ## TESTS
-TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
+#TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
