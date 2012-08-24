@@ -1,5 +1,6 @@
 
 py-bcrypt
+pytz
 
 #gunicorn==0.14.2
 #psycopg2==2.4.5
