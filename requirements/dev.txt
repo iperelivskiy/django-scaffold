@@ -1,7 +1,6 @@
 -r base.txt
 
-# Deployment
-Fabric
+Werkzeug
 
 # Documentation
 Sphinx

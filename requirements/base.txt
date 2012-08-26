@@ -1,6 +1,9 @@
 
 py-bcrypt
 pytz
+Fabric
+bpython
+webassets
 
 #gunicorn==0.14.2
 #psycopg2==2.4.5
@@ -8,10 +11,8 @@ pytz
 
 django>=1.4
 django-extensions
-django-assets
 South
 Pillow
-webassets
 
 #sorl-thumbnail
 #django-braces
@@ -27,6 +28,7 @@ webassets
 #bleach
 #cef
 #django-secure
+
 
 ## Debug
 
