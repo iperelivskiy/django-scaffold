@@ -31,11 +31,13 @@ def runtests(options=''):
 
 
 def setup():
-    local('rm `find -name ".removeme"`')
-    local('mv tpl.gitignore .gitignore')
-    local('mv tpl.README.md README.md')
-    local('rm LICENSE')
+    local('rm -f `find -name ".removeme"`')
+    if os.path.exists('tpl.gitignore'):
+        local('mv tpl.gitignore .gitignore')
+    if os.path.exists('tpl.README.md'):
+        local('mv tpl.README.md README.md')
+    local('rm -f LICENSE')
     local('mkdir -p var/media')
     local('mkdir -p var/static')
     local('pip install -r requirements/dev.txt')
-    #syncdb()
+    syncdb()
