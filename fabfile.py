@@ -41,4 +41,5 @@ def setup():
     local('mkdir -p var/media')
     local('mkdir -p var/static')
     local('pip install -r requirements/dev.txt')
+    local('echo "from {{ project_name }}.conf.dev import *" > src/{{ project_name }}/{{ project_name }}/settings.py')
     syncdb()
