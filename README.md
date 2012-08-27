@@ -8,6 +8,7 @@ Consider PROJECT_NAME as your real project name
 
 - сreate your virtualenv
 - $ pip install django
+- $ pip install Fabric
 - $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
 - $ cd PROJECT_NAME
 - $ fab setup
