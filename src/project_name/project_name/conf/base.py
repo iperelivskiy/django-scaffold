@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'django.contrib.contenttypes',
-    #'django.contrib.admin',
+    'grappelli',
+    'django.contrib.admin',
     #'django.contrib.sites',
     #'django.contrib.admindocs',
     #'django.contrib.markup',
@@ -192,3 +193,7 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.signals.SignalDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
 )
+
+from django.utils.text import capfirst
+
+GRAPPELLI_ADMIN_TITLE = capfirst('{{ project_name }}')

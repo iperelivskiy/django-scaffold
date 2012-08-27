@@ -1,6 +1,6 @@
 # Django 1.4 Project Template #
 
-Django project template with Twitter bootstrap included.
+Django project template with Twitter bootstrap.
 
 ## Setup ##
 
@@ -10,7 +10,7 @@ Consider PROJECT_NAME as your real project name
 - $ pip install django
 - $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
 - $ cd PROJECT_NAME
-- $ source bin/setup.sh
+- $ fab setup
 - $ fab runserver
 
 Project settings live in src/PROJECT_NAME/PROJECT_NAME/conf dir. Dev settings are used by default.

@@ -1,119 +1,41 @@
-import os
-import string
 
-from fabric.api import cd, run, env, local, sudo, require
-from fabric.operations import _prefix_commands, _prefix_env_vars
+from fabric.api import local
 
 
-env.user = '{{ project_name }}'
-env.hosts = ['{{ project_name }}.com']
-env.project_dir = '/srv/www/{{ project_name }}'
-env.project_repo = 'git@github.com:user/{{project_name}}.git'
-env.env_dir = '/home/%s/.virtualenvs/{{ project_name }}' % env.user
-env.django_settings_module = '{{ project_name }}.settings'
+def manage(command):
+    local("python src/{{ project_name }}/manage.py %s" % command)
+
+
+def shell():
+    manage('shell_plus')
 
 
 def runserver():
-    local("python src/{{ project_name }}/manage.py runserver")
+    manage('runserver_plus 0.0.0.0:8000')
 
 
-def runtests():
-    """ Runs the Django test suite as is.  """
-    local("python src/{{ project_name }}/manage.py test")
+def syncdb():
+    manage('syncdb')
 
 
-def deploy_static():
-    with cd(env.project_dir):
-        run('python manage.py collectstatic -v0 --noinput')
+def migration(app, options='--auto'):
+    manage('schemamigration %s %s' % (app, options))
 
 
-def uname():
-    """ Prints information about the host. """
-    run("uname -a")
+def migrate(options=''):
+    manage('migrate %s' % options)
 
 
-def push():
-    """ Push new code and pull on all hosts """
-    local('git push origin master')
-    with cd(env.project_dir):
-        run('git pull origin master')
+def runtests(options=''):
+    manage('test %s' % options)
 
 
-def update_requirements():
-    """ Update requirements in the virtualenv. """
-    run("%s/bin/pip install -r %s/requirements/prod.txt" % (env.env_dir, env.project_dir))
-
-
-def migrate(app=None):
-    """
-    Run the migrate task
-    Usage: fab migrate:app_name
-    """
-    if app:
-        run("source %s/bin/activate; django-admin.py migrate %s --settings=%s" % (env.env_dir, app, env.django_settings_module))
-    else:
-        run("source %s/bin/activate; django-admin.py migrate --settings=%s" % (env.env_dir, env.django_settings_module))
-
-
-def version():
-    """ Show last commit to the deployed repo. """
-    with cd(env.project_dir):
-        run('git log -1')
-
-
-def restart():
-    """ Restart the wsgi process """
-    run("touch %s/deploy/prod/wsgi.py" % env.project_dir)
-
-
-def ve_run(cmd):
-    """
-    Helper function.
-    Runs a command using the virtualenv environment
-    """
-    require('root')
-    return sshagent_run('source %s/bin/activate; %s' % (env.env_dir, cmd))
-
-
-def sshagent_run(cmd):
-    """
-    Helper function.
-    Runs a command with SSH agent forwarding enabled.
-
-    Note:: Fabric (and paramiko) can't forward your SSH agent.
-    This helper uses your system's ssh to do so.
-    """
-    # Handle context manager modifications
-    wrapped_cmd = _prefix_commands(_prefix_env_vars(cmd), 'remote')
-    try:
-        host, port = env.host_string.split(':')
-        return local(
-            "ssh -p %s -A %s@%s '%s'" % (port, env.user, host, wrapped_cmd)
-        )
-    except ValueError:
-        return local(
-            "ssh -A %s@%s '%s'" % (env.user, env.host_string, wrapped_cmd)
-        )
-
-
-def deploy():
-    """ Update the remote deployment, update the virtualenv, perform any
-    pending migrations, then restart the wsgi process """
-    push()
-    update_requirements()
-    migrate()
-    restart()
-
-
-def clone():
-    """ Clone the repository for the first time """
-    with cd(env.project_dir):
-        run('git clone %s .' % (env.project_repo))
-
-
-def bootstrap():
-    """ Bootstrap the initial deploy environment, then deploy """
-    run('mkdir -p %s' % (env.project_dir))
-    run('virtualenv %s' % (env.env_dir))
-    clone()
-    deploy()
+def setup():
+    local('rm `find -name ".removeme"`')
+    local('mv tpl.gitignore .gitignore')
+    local('mv tpl.README.md README.md')
+    local('rm LICENSE')
+    local('mkdir -p var/media')
+    local('mkdir -p var/static')
+    local('pip install -r requirements/dev.txt')
+    #syncdb()

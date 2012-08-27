@@ -11,6 +11,7 @@ webassets
 
 django>=1.4
 django-extensions
+django-grappelli
 South
 Pillow
 
