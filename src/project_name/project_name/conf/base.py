@@ -194,6 +194,4 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.logger.LoggingPanel',
 )
 
-from django.utils.text import capfirst
-
-GRAPPELLI_ADMIN_TITLE = capfirst('{{ project_name }}')
+GRAPPELLI_ADMIN_TITLE = '{{ project_name|title }}'
