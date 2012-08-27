@@ -3,7 +3,6 @@
 ## Install ##
 
 - mkvirtualenv {{ project_name }}
-- pip install django
 - pip install Fabric
 - git clone git@bitbucket.org:amigaz/{{ project_name }}.git
 - cd {{ project_name }}
