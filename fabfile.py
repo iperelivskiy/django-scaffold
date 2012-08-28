@@ -7,16 +7,16 @@ def manage(command):
     local("python src/{{ project_name }}/manage.py %s" % command)
 
 
+def run():
+    manage('runserver_plus 0.0.0.0:8000')
+
+
 def shell():
     manage('shell_plus')
 
 
-def runserver():
-    manage('runserver_plus 0.0.0.0:8000')
-
-
-def syncdb():
-    manage('syncdb')
+def syncdb(options=''):
+    manage('syncdb %s' % options)
 
 
 def migration(app, options='--auto'):

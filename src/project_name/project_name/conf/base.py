@@ -20,7 +20,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'django.contrib.contenttypes',
-    'grappelli',
     'django.contrib.admin',
     #'django.contrib.sites',
     #'django.contrib.admindocs',

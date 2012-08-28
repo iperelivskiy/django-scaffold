@@ -12,7 +12,7 @@ Consider PROJECT_NAME as your real project name
 - $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
 - $ cd PROJECT_NAME
 - $ fab setup
-- $ fab runserver
+- $ fab run
 
 Project settings live in src/PROJECT_NAME/PROJECT_NAME/conf dir. Dev settings are used by default.
 

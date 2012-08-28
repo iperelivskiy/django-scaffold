@@ -104,3 +104,4 @@ def bootstrap():
         run('git clone %s .' % (env.project_repo))
         run('mkdir -p var/media')
         run('mkdir -p var/static')
+        run('echo "from {{ project_name }}.conf.prod import *" > src/{{ project_name }}/{{ project_name }}/settings.py')
