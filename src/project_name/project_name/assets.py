@@ -7,7 +7,10 @@ register('main_js', Bundle(
     #'js/libs/jquery-ui-1.8.18.min.js',
     #'js/libs/underscore.min.js',
     'js/plugins.js',
-    output='assets/js/main_bundle.js'
+    output='js/main_bundle.js'
 ))
 
-register('main_css', 'css/main.css', output='assets/css/main_bundle.css')
+
+register('main_css',
+         'css/main.css',
+         output='css/main_bundle.css')
