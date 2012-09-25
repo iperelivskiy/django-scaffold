@@ -1,0 +1,51 @@
+
+.border-top-radius(@radius) {
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -moz-border-radius-topright: @radius;
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+}
+
+.border-left-radius(@radius) {
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    border-top-left-radius: @radius;
+    border-bottom-left-radius: @radius;
+}
+
+.border-right-radius(@radius) {
+    -webkit-border-top-right-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+    -moz-border-radius-bottomright: @radius;
+    border-top-right-radius: @radius;
+    border-bottom-right-radius: @radius;
+}
+
+.corner(@bgColor: #fff, @borderColor: @dropdownBorder) {
+    &:before {
+        border-bottom: 7px solid @borderColor;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        content: "";
+        display: inline-block;
+        left: 9px;
+        position: absolute;
+        top: -7px;
+    }
+
+    &:after {
+        border-bottom: 6px solid @bgColor;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        content: "";
+        display: inline-block;
+        left: 10px;
+        position: absolute;
+        top: -6px;
+    }
+}

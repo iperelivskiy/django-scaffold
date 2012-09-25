@@ -4,23 +4,28 @@ pytz
 Fabric
 bpython
 webassets
+pytils
 
 #gunicorn==0.14.2
 #psycopg2==2.4.5
 #MySQL-python
 
 django>=1.4
-django-extensions
+
 South
 Pillow
 
+
 #sorl-thumbnail
+#easy_thumbnails
 #django-braces
-#django-crispy-forms
 #django-registration
+#django-extensions
 #django-social-auth
+#django-userena
+#django-crispy-forms
 #django-profiletools
-#django-registration
+#django-autoslug
 
 
 ## Security
@@ -33,6 +38,7 @@ Pillow
 ## Debug
 
 django-debug-toolbar
+
 # There are useful panels for debug-toolbar, but have not quite been updated yet for 1.4
 #-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
 #-e git://github.com/ross/memcache-debug-panel#egg=memcache_toolbar-dev

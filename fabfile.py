@@ -3,16 +3,16 @@ import os
 from fabric.api import local
 
 
-def manage(command):
+def manage(command=''):
     local("python src/{{ project_name }}/manage.py %s" % command)
 
 
 def run():
+    manage('runserver 0.0.0.0:8000')
+
+
+def runplus():
     manage('runserver_plus 0.0.0.0:8000')
-
-
-def shell():
-    manage('shell_plus')
 
 
 def syncdb(options=''):
@@ -41,5 +41,6 @@ def setup():
     local('mkdir -p var/media')
     local('mkdir -p var/static')
     local('pip install -r requirements/dev.txt')
-    local('echo "from {{ project_name }}.conf.dev import *" > src/{{ project_name }}/{{ project_name }}/settings.py')
+    local('echo "from {{ project_name }}.conf.dev import *" > '
+          'src/{{ project_name }}/{{ project_name }}/settings.py')
     syncdb()

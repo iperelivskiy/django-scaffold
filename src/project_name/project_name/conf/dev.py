@@ -8,7 +8,7 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_ROOT, 'var','db.sqlite'),
+        'NAME': os.path.join(PROJECT_ROOT, 'var', 'db.sqlite'),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -49,14 +49,11 @@ SECRET_KEY = '{{ secret_key }}'
 
 ROOT_URLCONF = '{{ project_name }}.urls_dev'
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'var','media')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'var', 'media')
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'var', 'static')
 STATIC_URL = '/static/'
-
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
 
 # Uncomment these to activate and customize Celery:
 # CELERY_ALWAYS_EAGER = False  # required to activate celeryd

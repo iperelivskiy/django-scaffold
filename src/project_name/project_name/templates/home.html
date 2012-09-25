@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
+{% block page_title_block %}Projectname{% endblock %}
+
 {% block body_class %}home-page{% endblock %}
 
-{% block content %}
-<div class="container">
-	<br>
-	<div class="hero-unit">
-		<h1>It worked!</h1>
-		<h2>Congratulations on your first Django-powered page.</h2>
-	</div>
+{% block page_header_block %}{% endblock %}
+
+{% block page_content %}
+<br>
+<div class="hero-unit">
+    <h1>It worked!</h1>
+    <h2>Congratulations on your first Django-powered page.</h2>
 </div>
 {% endblock %}
