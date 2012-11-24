@@ -16,6 +16,7 @@ pytils
 
 django-extensions
 django-braces
+django-assets
 South
 #django-social-auth
 #django-userena

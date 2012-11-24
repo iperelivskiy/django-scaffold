@@ -94,7 +94,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 
@@ -140,10 +140,10 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 SOUTH_TESTS_MIGRATE = False
 
 
-# SORL
+# THUMBNAILS
 
-THUMBNAIL_COLORSPACE = None
-THUMBNAIL_FORMAT = 'PNG'
+THUMBNAIL_BASEDIR = 'thumbs'
+THUMBNAIL_PRESERVE_EXTENSIONS = True
 
 
 # DEBUG TOOLBAR
