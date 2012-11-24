@@ -1,20 +1,16 @@
-# Django 1.4 Project Template #
+# Django Project Template #
 
-Django project template with Twitter bootstrap.
+Django project template with Twitter Bootstrap and H5BP.
 
 ## Setup ##
 
-Consider PROJECT_NAME as your real project name
+- $ mkvirtualenv {project_name}
+- $ pip install Django Fabric
+- $ django-admin.py startproject --template=https://github.com/livskiy/djangoboot/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" {project_name}
+- $ cd {project_name}
+- $ fab setup run
 
-- $ mkvirtualenv PROJECT_NAME
-- $ pip install django
-- $ pip install Fabric
-- $ django-admin.py startproject --template=https://github.com/livskiy/django-project-template/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" PROJECT_NAME
-- $ cd PROJECT_NAME
-- $ fab setup
-- $ fab run
-
-Project settings live in src/PROJECT_NAME/PROJECT_NAME/conf dir. Dev settings are used by default.
+Project settings live in src/{project_name}/{project_name}/conf dir. Dev settings are used by default.
 
 ## License ##
 

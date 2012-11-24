@@ -12,7 +12,7 @@ LESS_DIR="$DIR/src/{{ project_name }}/{{ project_name}}/static/less"
 CSS_DIR="$DIR/src/{{ project_name }}/{{ project_name}}/static/css"
 
 while true;
-	do inotifywait -qe modify `find -name "*.less"`;
+    do inotifywait -qe modify `find -name "*.less"`;
     lessc "$LESS_DIR/main.less" "$CSS_DIR/main.css";
     if [ "$?" -eq "0" ]; then echo "Compiled."; fi
 done;
