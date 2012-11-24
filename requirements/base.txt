@@ -1,32 +1,32 @@
 
+django
+
+Pillow
+Fabric
 py-bcrypt
 pytz
-Fabric
 bpython
 webassets
 pytils
+#akismet
+#pymongo
+#mongoengine
+#gunicorn
+#psycopg2
 
-#gunicorn==0.14.2
-#psycopg2==2.4.5
-#MySQL-python
-
-django>=1.4
-
+django-extensions
+django-braces
 South
-Pillow
-
-
-#sorl-thumbnail
-#easy_thumbnails
-#django-braces
-#django-registration
-#django-extensions
 #django-social-auth
 #django-userena
 #django-crispy-forms
 #django-profiletools
 #django-autoslug
-
+#django-blog-zinnia
+#easy-thumbnails
+#django-admin-bootstrapped
+#django-registration
+#sorl-thumbnail
 
 ## Security
 
@@ -34,15 +34,12 @@ Pillow
 #cef
 #django-secure
 
-
 ## Debug
 
 django-debug-toolbar
-
 # There are useful panels for debug-toolbar, but have not quite been updated yet for 1.4
 #-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
 #-e git://github.com/ross/memcache-debug-panel#egg=memcache_toolbar-dev
-
 
 ## Templates
 
@@ -51,30 +48,20 @@ django-debug-toolbar
 #jingo-minify
 #Markdown
 
-
 ## Logging
 
 #raven
-
 
 ## Message queue
 
 #celery
 #django-celery
 
-
 ## L10n/i18n
 
 #Babel
 #-e git://github.com/clouserw/tower.git#egg=tower
 
-
 ## Caching
 
 #python-memcached
-
-
-## Various tidbits
-
-#commonware
-#-e git://github.com/mozilla/nuggets.git#egg=nuggets

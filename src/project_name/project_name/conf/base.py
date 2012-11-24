@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 import os
 #import memcache_toolbar.panels.memcache
@@ -8,7 +7,7 @@ PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')
 LANGUAGE_CODE = 'ru'
 
 LANGUAGES = (
-    ('ru', u'Russian'),
+    ('ru', 'Russian'),
 )
 
 SITE_ID = 1
@@ -30,11 +29,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_assets',
     'south',
-    #'sorl.thumbnail',
-    #'crispy_forms',
-    #'djcelery',
-    #'django_nose',
-    #'memcache_toolbar',
 
     '{{ project_name }}',
 ]
@@ -116,7 +110,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates" or
+    # "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
@@ -192,5 +187,3 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.signals.SignalDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
 )
-
-GRAPPELLI_ADMIN_TITLE = '{{ project_name|title }}'

@@ -4,7 +4,6 @@
 
 - mkvirtualenv {{ project_name }}
 - pip install Fabric
-- git clone git@bitbucket.org:amigaz/{{ project_name }}.git
+- git clone git@bitbucket.org:company/{{ project_name }}.git
 - cd {{ project_name }}
-- fab setup
-- fab run
+- fab setup run
