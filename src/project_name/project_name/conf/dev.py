@@ -29,7 +29,7 @@ TIME_ZONE = 'Asia/Almaty'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = DEBUG
-ASSETS_DEBUG = DEBUG
+ASSETS_DEBUG = False
 CRISPY_FAIL_SILENTLY = not DEBUG
 
 # Make this unique, and don't share it with anybody.  It cannot be blank.
