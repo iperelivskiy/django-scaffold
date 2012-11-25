@@ -1,6 +1,6 @@
 # Django Project Template #
 
-Django project template with Twitter Bootstrap and H5BP.
+Django project template with Twitter Bootstrap, H5BP and Fabric deployment scripts.
 
 ## Setup ##
 
