@@ -8,7 +8,7 @@ def manage(command='help'):
 
 
 def run():
-    manage('runserver 0.0.0.0:8000')
+    manage('runserver 0.0.0.0:8000 --insecure')
 
 
 def runplus():
@@ -33,6 +33,11 @@ def migrate(options=''):
 
 def runtests(options=''):
     manage('test %s' % options)
+
+
+def collectstatic():
+    manage('collectstatic -v0 --noinput')
+    manage('assets build')
 
 
 def setup():
