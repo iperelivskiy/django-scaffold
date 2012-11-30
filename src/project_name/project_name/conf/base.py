@@ -26,11 +26,11 @@ INSTALLED_APPS = [
     #'django.contrib.humanize',
     #'django.contrib.syndication',
 
+    '{{ project_name }}',
+
     'django_extensions',
     'django_assets',
     'south',
-
-    '{{ project_name }}',
 ]
 
 
@@ -159,14 +159,18 @@ INSTALLED_APPS += [
 ]
 
 
-def custom_show_toolbar(request):
-    """ Only show the debug toolbar to users with the superuser flag. """
-    return request.user.is_superuser
+def show_debug_toolbar(request):
+    """
+    Only show the debug toolbar to users with the superuser flag.
+    """
+    if 'XDebug' in request.COOKIES:
+        return True
+    return False
 
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+    'SHOW_TOOLBAR_CALLBACK': show_debug_toolbar,
     'HIDE_DJANGO_SQL': True,
     'TAG': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
