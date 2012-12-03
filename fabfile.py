@@ -8,7 +8,7 @@ def manage(command='help'):
 
 
 def run():
-    manage('runserver 0.0.0.0:8000 --insecure')
+    manage('runserver 0.0.0.0:8000')
 
 
 def runplus():
@@ -47,7 +47,9 @@ def setup():
     if os.path.exists('tpl.README.md'):
         local('mv tpl.README.md README.md')
     local('rm -f LICENSE')
+    local('mkdir -p var/log')
     local('mkdir -p var/media')
+    local('mkdir -p var/run')
     local('mkdir -p var/static')
     local('pip install -r requirements/dev.txt')
     local('echo "from {{ project_name }}.conf.dev import *" > '

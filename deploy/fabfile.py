@@ -146,9 +146,10 @@ def setup():
     run('mkdir -p %(project_root)s' % env)
     with cd(env.project_root):
         run('git clone %(project_repo)s .' % env)
-        run('mkdir -p var/media')
-        run('mkdir -p var/static')
         run('mkdir -p var/log')
+        run('mkdir -p var/media')
+        run('mkdir -p var/run')
+        run('mkdir -p var/static')
         run('echo "from %(project_name)s.conf.%(deploy_mode)s import *" > '
             'src/%(project_name)s/%(project_name)s/settings.py' % env)
     run('mkdir -p %(env_dir)s' % env)
