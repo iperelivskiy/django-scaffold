@@ -2,4 +2,4 @@
 A URL conf for development only.
 """
 
-from .urls import urlpatterns
+from {{ project_name }}.urls import urlpatterns

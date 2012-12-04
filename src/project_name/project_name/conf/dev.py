@@ -1,5 +1,5 @@
 
-from .base import *
+from {{ project_name }}.conf.base import *
 
 
 DATABASES = {
