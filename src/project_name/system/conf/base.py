@@ -88,17 +88,17 @@ STATICFILES_FINDERS = (
 )
 
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+)
 
 
-TEMPLATE_CONTEXT_PROCESSORS = [
+TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.debug',
@@ -106,7 +106,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
-]
+)
 
 
 TEMPLATE_DIRS = (
@@ -162,14 +162,14 @@ THUMBNAIL_PRESERVE_EXTENSIONS = True
 
 # DEBUG TOOLBAR
 
-MIDDLEWARE_CLASSES += [
+MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
+)
 
 
-INSTALLED_APPS += [
+INSTALLED_APPS += (
     'debug_toolbar',
-]
+)
 
 
 def show_debug_toolbar(request):

@@ -3,7 +3,7 @@ from django_assets import Bundle, register
 
 
 register('main_js', Bundle(
-    'libs/jquery-1.8.3.min.js',
+    'libs/jquery-1.8.3.js',
     'libs/underscore-1.4.4.js',
     'plugins/plugins.js',
     'js/main.js',

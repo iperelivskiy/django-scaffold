@@ -7,7 +7,7 @@
 echo "Listening to less files...";
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DIR=${DIR%"/bin"}
+DIR=${DIR%"/dev/bin"}
 LESS_DIR="$DIR/src/{{ project_name }}/system/static/less"
 CSS_DIR="$DIR/src/{{ project_name }}/system/static/css"
 
