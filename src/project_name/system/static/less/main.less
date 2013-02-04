@@ -1,11 +1,19 @@
 
+/*!
+ * Bootstrap v2.2.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
 // CSS Reset
 @import "../libs/bootstrap/less/reset.less";
 
 // Core variables and mixins
-@import "../libs/bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "variables.less";
-@import "../libs/bootstrap/less/mixins.less";
 @import "mixins.less";
 
 // Grid system and page structure
@@ -45,6 +53,7 @@
 
 // Components: Misc
 @import "../libs/bootstrap/less/thumbnails.less";
+@import "../libs/bootstrap/less/media.less";
 @import "../libs/bootstrap/less/labels-badges.less";
 @import "../libs/bootstrap/less/progress-bars.less";
 @import "../libs/bootstrap/less/accordion.less";
@@ -54,6 +63,14 @@
 // Utility classes
 @import "../libs/bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
+
+// Custom
+@import "reset.less";
 @import "common.less";
+@import "buttons.less";
 @import "forms.less";
+@import "qtip.less";
+@import "modals.less";
+@import "colorbox.less";
+
 @import "responsive.less";

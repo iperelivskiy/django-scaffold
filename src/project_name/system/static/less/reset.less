@@ -1,0 +1,54 @@
+
+html {
+    overflow-y: scroll;
+}
+
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+h5 { font-size: 12px; }
+h6 { font-size: 12px; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+
+h1 small { font-size: 24px; }
+h2 small { font-size: 18px; }
+h3 small { font-size: 14px; }
+h4 small { font-size: 14px; }
+
+a {
+    &:focus {
+        outline: none;
+    }
+}
+
+/* for unsupported browsers */
+.placeholder { color: @placeholderColor; }
+
+/* for modern browsers */
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: @placeholderColor;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: @placeholderColor;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: @placeholderColor;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: @placeholderColor;
+}

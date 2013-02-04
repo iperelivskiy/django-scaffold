@@ -3,14 +3,14 @@ from django_assets import Bundle, register
 
 
 register('main_js', Bundle(
-    'libs/jquery-1.8.2.min.js',
-    'libs/underscore-min.js',
+    'libs/jquery-1.8.3.min.js',
+    'libs/underscore-1.4.4.js',
     'plugins/plugins.js',
     'js/main.js',
-    output='compress_/js/main.js'))
+    output='_compress/js/main.js'))
 
 
 register('main_css', Bundle(
          'css/main.css',
          filters='cssrewrite',
-         output='compress_/css/main.css'))
+         output='_compress/css/main.css'))

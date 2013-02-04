@@ -11,10 +11,3 @@ A Django project template with Twitter Bootstrap, H5BP and Fabric deployment scr
 - $ fab setup run
 
 Project settings live in src/{project_name}/system/conf dir. Dev settings are used by default.
-
-## License ##
-
-This software is licensed under the [New BSD License][BSD]. For more
-information, read the file ``LICENSE``.
-
-[BSD]: http://opensource.org/licenses/BSD-3-Clause

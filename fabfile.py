@@ -6,7 +6,7 @@ quiet = lambda: settings(hide('everything'), warn_only=True)
 
 
 def manage(command='help'):
-    local("python src/{{ project_name }}/manage.py %s" % command)
+    local('python src/{{ project_name }}/manage.py %s' % command)
 
 
 def run():
