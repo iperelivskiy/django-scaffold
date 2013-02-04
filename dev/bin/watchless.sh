@@ -8,8 +8,8 @@ echo "Listening to less files...";
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=${DIR%"/bin"}
-LESS_DIR="$DIR/src/{{ project_name }}/{{ project_name}}/static/less"
-CSS_DIR="$DIR/src/{{ project_name }}/{{ project_name}}/static/css"
+LESS_DIR="$DIR/src/{{ project_name }}/system/static/less"
+CSS_DIR="$DIR/src/{{ project_name }}/system/static/css"
 
 while true;
     do inotifywait -qe modify `find -name "*.less"`;

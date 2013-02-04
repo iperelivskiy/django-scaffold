@@ -1,20 +1,25 @@
 
-from {{ project_name }}.conf.base import *
+from system.conf.base import *
+
+
+INSTALLED_APPS += (
+    'gunicorn',
+)
 
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_ROOT, 'var', 'db.sqlite'),
-        'USER': '',
-        'PASSWORD': '',
-        #'OPTIONS': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(PROJECT_ROOT, 'var', 'db.sqlite'),
+        # 'USER': '',
+        # 'PASSWORD': '',
+        # 'OPTIONS': {
         #    'init_command': 'SET storage_engine=InnoDB',
         #    'charset' : 'utf8',
         #    'use_unicode' : True,
-        #},
-        #'TEST_CHARSET': 'utf8',
-        #'TEST_COLLATION': 'utf8_general_ci',
+        # },
+        # 'TEST_CHARSET': 'utf8',
+        # 'TEST_COLLATION': 'utf8_general_ci',
     }
 }
 
@@ -41,12 +46,13 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = DEBUG
 ASSETS_DEBUG = DEBUG
+ASSETS_AUTO_BUILD = DEBUG
 CRISPY_FAIL_SILENTLY = not DEBUG
 
 # Make this unique, and don't share it with anybody.  It cannot be blank.
 SECRET_KEY = '{{ secret_key }}'
 
-ROOT_URLCONF = '{{ project_name }}.urls'
+ROOT_URLCONF = 'system.urls'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'var', 'media')
 MEDIA_URL = '/media/'

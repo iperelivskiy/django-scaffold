@@ -8,4 +8,3 @@
 .rope*
 .webassets-cache
 /var
-/src/{{ project_name }}/{{ project_name }}/settings.py

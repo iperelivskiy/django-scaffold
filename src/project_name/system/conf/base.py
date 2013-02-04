@@ -1,8 +1,11 @@
 
 import os
-#import memcache_toolbar.panels.memcache
 
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')
+
+SRC_ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
+
+PROJECT_ROOT = os.path.join(SRC_ROOT, '..', '..')
+
 
 LANGUAGE_CODE = 'ru'
 
@@ -10,10 +13,11 @@ LANGUAGES = (
     ('ru', 'Russian'),
 )
 
+
 SITE_ID = 1
 
 
-INSTALLED_APPS = [
+INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
@@ -26,16 +30,13 @@ INSTALLED_APPS = [
     #'django.contrib.humanize',
     #'django.contrib.syndication',
 
-    '{{ project_name }}',
+    'system',
 
     'django_extensions',
     'django_assets',
     'south',
-]
+)
 
-
-# Defines the views served for root URLs.
-ROOT_URLCONF = '{{ project_name }}.urls'
 
 # Place bcrypt first in the list, so it will be the default password hashing
 # mechanism
@@ -59,7 +60,6 @@ SESSION_COOKIE_SECURE = False
 
 
 ## TESTS
-#TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -110,10 +110,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or
-    # "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SRC_ROOT, 'templates'),
 )
 
 
@@ -128,13 +125,30 @@ FIXTURE_DIRS = (
     os.path.join(PROJECT_ROOT, 'fixtures'),
 )
 
-# Specify a model to use for user profiles, if desired.
-#AUTH_PROFILE_MODULE = '{{ project_name }}.accounts.UserProfile'
+
+LOCALE_PATHS = (
+    os.path.join(SRC_ROOT, 'templates', 'locale'),
+)
+
 
 FILE_UPLOAD_PERMISSIONS = 0664
 
 # The WSGI Application to use for runserver
-WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+WSGI_APPLICATION = 'system.wsgi.application'
+
+
+# MESSAGES
+
+from django.contrib.messages import constants as message_constants
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'alert-debug',
+    message_constants.INFO: 'alert-info',
+    message_constants.SUCCESS: 'alert-success',
+    message_constants.WARNING: 'alert-warning',
+    message_constants.ERROR: 'alert-error',
+}
+
 
 # http://south.aeracode.org/ticket/520
 SOUTH_TESTS_MIGRATE = False
@@ -155,7 +169,6 @@ MIDDLEWARE_CLASSES += [
 
 INSTALLED_APPS += [
     'debug_toolbar',
-    #'debug_toolbar_user_panel',
 ]
 
 
@@ -179,8 +192,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 
 DEBUG_TOOLBAR_PANELS = (
-    #'debug_toolbar_user_panel.panels.UserPanel',
-    #'memcache_toolbar.panels.memcache.MemcachePanel',
     'debug_toolbar.panels.version.VersionDebugPanel',
     'debug_toolbar.panels.timer.TimerDebugPanel',
     'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',

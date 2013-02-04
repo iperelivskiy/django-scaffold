@@ -1,5 +1,5 @@
 
-from {{ project_name }}.conf.base import *
+from system.conf.base import *
 
 
 DATABASES = {
@@ -29,13 +29,14 @@ TIME_ZONE = 'Asia/Almaty'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = DEBUG
-ASSETS_DEBUG = False
+ASSETS_DEBUG = DEBUG
+ASSETS_AUTO_BUILD = DEBUG
 CRISPY_FAIL_SILENTLY = not DEBUG
 
 # Make this unique, and don't share it with anybody.  It cannot be blank.
 SECRET_KEY = '{{ secret_key }}'
 
-ROOT_URLCONF = '{{ project_name }}.urls_dev'
+ROOT_URLCONF = 'system.urls_dev'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'var', 'media')
 MEDIA_URL = '/media/'

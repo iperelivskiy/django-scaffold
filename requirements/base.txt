@@ -1,18 +1,14 @@
 
 django
 
-Pillow
-Fabric
+pillow
+fabric
 py-bcrypt
 pytz
 bpython
 webassets
 pytils
-#akismet
-#pymongo
-#mongoengine
-#gunicorn
-#psycopg2
+akismet
 
 django-extensions
 django-braces
@@ -20,27 +16,17 @@ django-assets
 South
 #django-social-auth
 #django-userena
+#django-registration
 #django-crispy-forms
-#django-profiletools
 #django-autoslug
 #django-blog-zinnia
 #easy-thumbnails
-#django-admin-bootstrapped
-#django-registration
-#sorl-thumbnail
 
 ## Security
 
 #bleach
 #cef
 #django-secure
-
-## Debug
-
-django-debug-toolbar
-# There are useful panels for debug-toolbar, but have not quite been updated yet for 1.4
-#-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
-#-e git://github.com/ross/memcache-debug-panel#egg=memcache_toolbar-dev
 
 ## Templates
 
@@ -51,11 +37,12 @@ django-debug-toolbar
 
 ## Logging
 
-#raven
+raven
 
-## Message queue
+## MQ
 
 #celery
+#celery-with-redis
 #django-celery
 
 ## L10n/i18n
@@ -66,3 +53,19 @@ django-debug-toolbar
 ## Caching
 
 #python-memcached
+
+## Redis
+
+#redis
+#django-redis
+
+## Postgres specific
+
+#djorm-ext-expressions
+#djorm-ext-pgarray
+#djorm-ext-hstore
+
+## Debug
+
+django-debug-toolbar
+#django-cache-panel

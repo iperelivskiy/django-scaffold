@@ -1,15 +1,19 @@
 -r base.txt
 
+# MySQL-python  # Requires distribute>=0.6.28
+# psycopg2
+
 Werkzeug
 
-# Documentation
+## Documentation
+
 Sphinx
 
-# Testing
+## Testing
+
 nose
 mock
 django-nose
--e git://github.com/jbalogh/test-utils.git#egg=test-utils
 coverage
 pep8
 pylint

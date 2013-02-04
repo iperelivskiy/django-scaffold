@@ -1,6 +1,8 @@
 
 import os
-from fabric.api import local
+from fabric.api import local, settings, hide
+
+quiet = lambda: settings(hide('everything'), warn_only=True)
 
 
 def manage(command='help'):
@@ -40,18 +42,34 @@ def collectstatic():
     manage('assets build')
 
 
+def celery():
+    with quiet():
+        local('python src/{{ project_name }}/manage.py celerycam '
+              '--pidfile=var/run/celeryev.pid &')
+    _celery_worker()
+
+
 def setup():
-    local('rm -f `find -name ".removeme"`')
+    local('find -name ".removeme" -delete')
     if os.path.exists('tpl.gitignore'):
         local('mv tpl.gitignore .gitignore')
     if os.path.exists('tpl.README.md'):
         local('mv tpl.README.md README.md')
     local('rm -f LICENSE')
     local('mkdir -p var/log')
-    local('mkdir -p var/media')
     local('mkdir -p var/run')
+    local('mkdir -p var/media')
     local('mkdir -p var/static')
     local('pip install -r requirements/dev.txt')
-    local('echo "from {{ project_name }}.conf.dev import *" > '
-          'src/{{ project_name }}/{{ project_name }}/settings.py')
     syncdb('--noinput --migrate')
+
+
+def _celery_worker():
+    local('reset')
+    local('python src/{{ project_name }}/manage.py celery worker '
+          '-E -B -l INFO &')
+    with quiet():
+        local('inotifywait -qe modify `find -name "*.py"`')
+        local("ps auxww | grep 'celery worker' | awk '{print $2}' | "
+              "xargs kill -9")
+    _celery_worker()
