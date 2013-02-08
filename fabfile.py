@@ -50,7 +50,6 @@ def celery():
 
 
 def setup():
-    local('find -name ".removeme" -delete')
     if os.path.exists('tpl.gitignore'):
         local('mv tpl.gitignore .gitignore')
     if os.path.exists('tpl.README.md'):

@@ -6,7 +6,7 @@ A Django project template with Twitter Bootstrap, H5BP and Fabric deployment scr
 
 - $ mkvirtualenv {project_name}
 - $ pip install django fabric
-- $ django-admin.py startproject --template=https://github.com/livskiy/djangoboot/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" {project_name}
+- $ django-admin.py startproject --template=https://github.com/livskiy/django-boot/zipball/master --extension="py,sh" --name="tpl.gitignore,tpl.README.md" {project_name}
 - $ cd {project_name}
 - $ fab setup run
 
