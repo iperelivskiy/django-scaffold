@@ -6,7 +6,7 @@ quiet = lambda: settings(hide('everything'), warn_only=True)
 
 
 def manage(command='help'):
-    local('python src/{{ project_name }}/manage.py %s' % command)
+    local("python src/{{ project_name }}/manage.py %s" % command)
 
 
 def run():
@@ -33,20 +33,32 @@ def migrate(options=''):
     manage('migrate %s' % options)
 
 
-def runtests(options=''):
-    manage('test %s' % options)
-
-
-def collectstatic():
+def buildstatic():
     manage('collectstatic -v0 --noinput')
-    manage('assets build')
+
+
+def test(options='', settings='{{ project_name }}.baseapp.settings.test'):
+    manage('test %s --settings=%s' % (options, settings))
+
+
+def thumbor():
+    local('thumbor --conf=develop/conf/thumbor.conf --port=8001')
+
+
+def less():
+    local('bash develop/bin/watchless.sh')
+
+
+def clear_pyc():
+    local('find -name "*.pyc" -delete')
 
 
 def celery():
     with quiet():
         local('python src/{{ project_name }}/manage.py celerycam '
               '--pidfile=var/run/celeryev.pid &')
-    _celery_worker()
+    local('python src/{{ project_name }}/manage.py celery worker '
+          '-E -B -l INFO --autoreload --schedule=var/run/celerybeat-schedule')
 
 
 def setup():
@@ -56,19 +68,9 @@ def setup():
         local('mv tpl.README.md README.md')
     local('rm -f LICENSE')
     local('mkdir -p var/log')
-    local('mkdir -p var/run')
     local('mkdir -p var/media')
+    local('mkdir -p var/run')
     local('mkdir -p var/static')
-    local('pip install -r requirements/dev.txt')
-    syncdb('--noinput --migrate')
-
-
-def _celery_worker():
-    local('reset')
-    local('python src/{{ project_name }}/manage.py celery worker '
-          '-E -B -l INFO &')
-    with quiet():
-        local('inotifywait -qe modify `find -name "*.py"`')
-        local("ps auxww | grep 'celery worker' | awk '{print $2}' | "
-              "xargs kill -9")
-    _celery_worker()
+    local('mkdir -p var/temp')
+    local('pip install -r requirements/develop.txt')
+    syncdb('--migrate')

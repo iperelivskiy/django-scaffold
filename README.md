@@ -10,4 +10,4 @@ A Django project template with Twitter Bootstrap, H5BP and Fabric deployment scr
 - $ cd {project_name}
 - $ fab setup run
 
-Project settings live in src/{project_name}/system/conf dir. Dev settings are used by default.
+Project settings live in src/{project_name}/baseapp/settings dir. Dev settings are used by default.

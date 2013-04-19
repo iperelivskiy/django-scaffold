@@ -1,2 +1,2 @@
 
-# System requirements go here.
+# OS level requirements go here.

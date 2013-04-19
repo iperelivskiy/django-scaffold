@@ -1,0 +1,19 @@
+-r base.txt
+
+# MySQL-python
+# psycopg2
+
+Werkzeug
+
+## Documentation
+
+Sphinx
+
+## Testing
+
+nose
+mock
+django-nose
+coverage
+pep8
+pylint

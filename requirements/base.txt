@@ -1,19 +1,24 @@
 
-django
+Django
 
 pillow
 fabric
 py-bcrypt
 pytz
 bpython
-webassets
-pytils
-akismet
+#pytils
+#akismet
+#thumbor
+#libthumbor
+#gevent
+#requests
 
+South
 django-extensions
 django-braces
-django-assets
-South
+django-pipeline
+django-bootstrap-toolkit
+django-suit
 #django-social-auth
 #django-userena
 #django-registration
@@ -21,6 +26,7 @@ South
 #django-autoslug
 #django-blog-zinnia
 #easy-thumbnails
+#jsonfield
 
 ## Security
 

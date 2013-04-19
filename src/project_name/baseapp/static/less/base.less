@@ -1,0 +1,69 @@
+
+html {
+    overflow-y: scroll;
+}
+
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+@footerHeight: 60px;
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -@footerHeight;  /* Negative indent footer by it's height */
+}
+
+
+#push {
+    height: @footerHeight;
+}
+
+#footer {
+    background-color: #f5f5f5;
+    height: @footerHeight;
+}
+
+#messages {
+    .alert {
+        display: none;
+
+        .no-js & {
+            display: block;
+        }
+    }
+
+    .inline {
+        display: block;
+    }
+}
+
+.btn {
+    .box-shadow(~"inset 0 0 1px rgba(255,255,255,.45), 0 0 1px rgba(0,0,0,.1)");
+}
+
+.thumbnail {
+    background-color: #fff;
+
+    img {
+        background: #f1f1f1;
+    }
+}
+
+.dropdown-menu {
+    .box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+    .border-radius(4px);
+}
+
+.typeahead {
+    .box-sizing(border-box);
+}
+
+.fb-comments-fluid, .fb-comments-fluid * {
+    width:100% !important;
+}

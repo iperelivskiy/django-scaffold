@@ -32,7 +32,6 @@ def manage(command='help'):
 
 def collectstatic():
     manage('collectstatic -v0 --noinput')
-    manage('assets build')
 
 
 def syncdb(options='--migrate'):

@@ -1,0 +1,36 @@
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    @boxShadow: inset 0 0 1px rgba(0, 0, 0, 0.17);
+
+    background-color: #f8f8f8;
+    border: 1px solid #c3c3c3;
+    .box-shadow(@boxShadow);
+    .transition(~"border linear .3s, background-color linear .3s, box-shadow linear .3s");
+
+    // Focus state
+    &:focus {
+        @borderColor: rgba(82, 168, 236, .7);
+        border-color: @borderColor;
+        background-color: #fefefe;
+        outline: 0 none;
+        outline: 0 none \9; /* IE6-9 */
+        @box-shadow: @boxShadow, 0 0 3px lighten(@borderColor, 20%);
+        .box-shadow(@box-shadow);
+    }
+}
