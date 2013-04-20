@@ -2,7 +2,7 @@
 
 /*global _*/
 /*jshint expr:true*/
-!(function($, window, document) {
+!(function($, window, document, undefined) {
     "use strict";
 
     if ($.extras === undefined) {
@@ -303,4 +303,4 @@
         });
     });
 
-})(window.jQuery, window, document, undefined);
+})(window.jQuery, window, document);
