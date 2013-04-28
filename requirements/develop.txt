@@ -1,9 +1,7 @@
 -r base.txt
 
-# MySQL-python
-# psycopg2
-
 Werkzeug
+watchdog
 
 ## Documentation
 
@@ -17,3 +15,6 @@ django-nose
 coverage
 pep8
 pylint
+
+# MySQL-python
+# psycopg2

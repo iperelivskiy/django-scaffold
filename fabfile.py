@@ -2,7 +2,7 @@
 import os
 from fabric.api import local, settings, hide
 
-quiet = lambda: settings(hide('everything'), warn_only=True)
+PROJECT_ROOT = os.path.dirname(__file__)
 
 
 def manage(command='help'):
@@ -46,7 +46,9 @@ def thumbor():
 
 
 def less():
-    local('bash develop/bin/watchless.sh')
+    main_less = os.path.join(PROJECT_ROOT, 'src', '{{ project_name }}',
+                             'baseapp', 'static', 'less', 'main.less')
+    local('python develop/bin/watchless.py %s' % main_less)
 
 
 def clear_pyc():
@@ -54,7 +56,7 @@ def clear_pyc():
 
 
 def celery():
-    with quiet():
+    with _quiet():
         local('python src/{{ project_name }}/manage.py celerycam '
               '--pidfile=var/run/celeryev.pid &')
     local('python src/{{ project_name }}/manage.py celery worker '
@@ -74,3 +76,6 @@ def setup():
     local('mkdir -p var/temp')
     local('pip install -r requirements/develop.txt')
     syncdb('--migrate')
+
+
+_quiet = lambda: settings(hide('everything'), warn_only=True)
