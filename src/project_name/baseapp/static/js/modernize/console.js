@@ -9,7 +9,7 @@
         'timeStamp', 'trace', 'warn'
     ];
     var length = methods.length;
-    var console = (window.console = window.console || {});
+    var console = window.console || {};
 
     while (length--) {
         method = methods[length];
@@ -19,4 +19,9 @@
             console[method] = noop;
         }
     }
+
+    try {
+        delete window.console;  // For FF 3.5
+        window.console = console;
+    } catch(e) {}
 }());
