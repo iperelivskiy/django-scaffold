@@ -185,22 +185,3 @@ def _sudo(func, *args, **kwargs):
     result = func(*args, **kwargs)
     env.host_string = network.join_host_strings(old_user, host, port)
     return result
-
-
-# def _upload_template(src, dst, **kwargs):
-#     if not os.path.isfile(src):
-#         abort('Template file %s not found.' % src)
-#     _sudo(files.upload_template, src, dst, env, **kwargs)
-#     run('less %s' % dst)
-# def nginx_restart():
-#     """
-#     Updates nginx config and restarts nginx.
-#     """
-#     _upload_template('%(deploy_mode)s/nginx.conf' % env,
-#                      '/etc/nginx/sites-available/%(project_name)s' % env)
-#     with settings(warn_only=True):
-#         sudo('ln -sf /etc/nginx/sites-available/%(project_name)s '
-#                  '/etc/nginx/sites-enabled/%(project_name)s' % env)
-
-# def nginx_status():
-#     run('service nginx status')
