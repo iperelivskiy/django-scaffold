@@ -5,7 +5,7 @@ PIPELINE_CSS = {
             'plugins/humane/themes/jackedup.css',
             'css/main.css',
         ),
-        'output_filename': 'css/main.css',
+        'output_filename': '_css/main.css',
         'extra_context': {
             'media': 'screen,projection',
         },
@@ -14,7 +14,7 @@ PIPELINE_CSS = {
         'source_filenames': (
             'css/admin.css',
         ),
-        'output_filename': 'css/admin.css',
+        'output_filename': '_css/admin.css',
         'extra_context': {
             'media': 'screen,projection',
         },
@@ -29,7 +29,7 @@ PIPELINE_JS = {
             'js/modernize/json2.js',
             'js/modernize/console.js',
         ),
-        'output_filename': 'js/modernize.js',
+        'output_filename': '_js/modernize.js',
     },
     'main': {
         'source_filenames': (
@@ -39,6 +39,6 @@ PIPELINE_JS = {
             'plugins/humane/humane.js',
             'js/main.js',
         ),
-        'output_filename': 'js/main.js',
+        'output_filename': '_js/main.js',
     }
 }

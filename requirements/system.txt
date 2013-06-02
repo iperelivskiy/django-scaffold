@@ -1,2 +1,7 @@
 
 # OS level requirements go here.
+
+# By default yuglify used by django-pipeline.
+# sudo aptitude install nodejs npm
+# sudo npm -g install yuglify
+# sudo ln -sf /usr/bin/nodejs /usr/bin/node  # In case of naming issue.

@@ -64,10 +64,8 @@ def celery():
 
 
 def setup():
-    if os.path.exists('tpl.gitignore'):
-        local('mv tpl.gitignore .gitignore')
-    if os.path.exists('tpl.README.md'):
-        local('mv tpl.README.md README.md')
+    if os.path.exists('README.tpl'):
+        local('mv README.tpl README.md')
     local('rm -f LICENSE')
     local('mkdir -p var/log')
     local('mkdir -p var/media')

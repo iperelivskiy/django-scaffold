@@ -2,7 +2,7 @@
 from baseapp.settings.base import *
 
 
-ALLOWED_HOSTS = ['example.com']
+ALLOWED_HOSTS = ['{{ project_name }}.com']
 
 
 INSTALLED_APPS += (
@@ -54,10 +54,10 @@ SECRET_KEY = '{{ secret_key }}'
 ROOT_URLCONF = 'baseapp.urls'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'var', 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '//s0.{{ project_name }}.com/m/'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'var', 'static')
-STATIC_URL = '/static/'
+STATIC_URL = '//s0.{{ project_name }}.com/s/'
 
 #EMAIL_HOST = 'localhost'
 #EMAIL_PORT = 25
