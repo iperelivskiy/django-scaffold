@@ -22,6 +22,7 @@
 
     try {
         delete window.console;  // For FF 3.5
-        window.console = console;
     } catch(e) {}
+
+    window.console = console;
 }());

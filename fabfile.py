@@ -37,7 +37,7 @@ def buildstatic():
     manage('collectstatic -v0 --noinput')
 
 
-def test(options='', settings='{{ project_name }}.baseapp.settings.test'):
+def test(options='', settings='baseapp.settings.test'):
     manage('test %s --settings=%s' % (options, settings))
 
 
