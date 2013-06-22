@@ -44,3 +44,4 @@ nosetests.xml
 .sass-cache
 
 /var
+/node_modules
